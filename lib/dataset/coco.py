@@ -59,7 +59,7 @@ def coco_results_one_category_kernel(data_pack):
 
 
 class coco(IMDB):
-    def __init__(self, image_set, root_path, data_path, result_path=None, rpn_path=None, mask_size=-1, binary_thresh=None):
+    def __init__(self, image_set, root_path, data_path, result_path=None, rpn_path=None, mask_size=-1, binary_thresh=None, use_philly=False):
         """
         fill basic information to initialize imdb
         :param image_set: train2014, val2014, test2015
@@ -93,6 +93,9 @@ class coco(IMDB):
                     'test-dev2015': 'test2015'}
         self.data_name = view_map[image_set] if image_set in view_map else image_set
 
+        # use_philly
+        self.use_philly = use_philly
+
     def _get_ann_file(self):
         """ self.data_path / annotations / instances_train2014.json """
         prefix = 'instances' if 'test' not in self.image_set else 'image_info'
@@ -106,8 +109,15 @@ class coco(IMDB):
 
     def image_path_from_index(self, index):
         """ example: images / train2014 / COCO_train2014_000000119993.jpg """
-        filename = 'COCO_%s_%012d.jpg' % (self.data_name, index)
-        image_path = os.path.join(self.data_path, 'images', self.data_name, filename)
+        """ 2017 example: images / train2017 / 000000119993.jpg"""
+        if '2014' in self.data_name:
+            file_name = 'COCO_%s_%012d.jpg' % (self.data_name, index)
+        elif '2017' in self.data_name:
+            file_name = '%012d.jpg' % index
+        else:
+            raise ValueError("failed to recognize coco dataset")
+        data_name = self.data_name + '.zip@' if self.use_philly else self.data_name
+        image_path = os.path.join(self.data_path, 'images', data_name, filename)
         assert os.path.exists(image_path), 'Path does not exist: {}'.format(image_path)
         return image_path
 

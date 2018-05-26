@@ -46,6 +46,18 @@ class Speedometer(object):
             self.tic = time.time()
 
 
+class PhillyProgressCallback(object):
+    def __init__(self, total_iter, frequent=50):
+        self.total_iter = total_iter
+        self.frequent = frequent
+        self.cur_iter = 0
+    
+    def __call__(self, param):
+        if self.cur_iter % self.frequent == 0:
+            print('\nPROGRESS: {:.2f}%\n'.format(100 * self.cur_iter / self.total_iter))
+        self.cur_iter += 1
+
+
 def do_checkpoint(prefix, means, stds):
     def _callback(iter_no, sym, arg, aux):
         arg['bbox_pred_weight_test'] = (arg['bbox_pred_weight'].T * mx.nd.array(stds)).T

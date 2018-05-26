@@ -18,6 +18,7 @@ config.symbol = ''
 config.gpus = ''
 config.CLASS_AGNOSTIC = True
 config.SCALES = [(600, 1000)]  # first is scale (the shorter side); second is max size
+config.USE_PHILLY = False
 
 # default training
 config.default = edict()
@@ -206,3 +207,15 @@ def update_config(config_file):
                         config[k] = v
             else:
                 raise ValueError("key must exist in config.py")
+
+
+def update_philly_config(model_dir, data_dir):
+    def _update_to_abs(prefix, basename):
+        if not os.path.isabs(basename):
+            print("Update {} with {}".format(basename, prefix))
+            return os.path.join(prefix, basename)
+        else:
+            return basename
+    
+    config.output_path = _update_to_abs(model_dir, config.output_path)
+    config.dataset.dataset_path = _update_to_abs(data_dir, config.dataset.dataset_path)

@@ -4,6 +4,7 @@ import cv2
 import random
 from PIL import Image
 from bbox.bbox_transform import clip_boxes
+import phillyzip
 
 
 # TODO: This two functions should be merged with individual data loader
@@ -22,8 +23,13 @@ def get_image(roidb, config):
     processed_roidb = []
     for i in range(num_images):
         roi_rec = roidb[i]
-        assert os.path.exists(roi_rec['image']), '%s does not exist'.format(roi_rec['image'])
-        im = cv2.imread(roi_rec['image'], cv2.IMREAD_COLOR|cv2.IMREAD_IGNORE_ORIENTATION)
+        img_path = roi_rec['image']
+        assert os.path.exists(img_path), '%s does not exist'.format(img_path)
+        if '.zip@' in img_path:
+            im = phillyzip.imread(img_path, cv2.IMREAD_COLOR | cv2.IMREAD_IGNORE_ORIENTATION)
+        else:
+            im = cv2.imread(roi_rec['image'], cv2.IMREAD_COLOR|cv2.IMREAD_IGNORE_ORIENTATION)
+            
         if roidb[i]['flipped']:
             im = im[:, ::-1, :]
         new_rec = roi_rec.copy()
