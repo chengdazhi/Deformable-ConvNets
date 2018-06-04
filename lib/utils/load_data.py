@@ -6,7 +6,7 @@ def load_gt_roidb(dataset_name, image_set_name, root_path, dataset_path, result_
                   flip=False, use_philly=False):
     """ load ground truth roidb """
     """ use philly is only implemented for COCO, and could be migrated to other datasets after modifying imdbs"""
-    imdb = eval(dataset_name)(image_set_name, root_path, dataset_path, result_path, use_phillly=use_philly)
+    imdb = eval(dataset_name)(image_set_name, root_path, dataset_path, result_path, use_philly=use_philly)
     roidb = imdb.gt_roidb()
     if flip:
         roidb = imdb.append_flipped_images(roidb)

@@ -25,7 +25,7 @@ def imread(filename, flags=cv2.IMREAD_COLOR):
         print("character '@' is not found from the given path '%s'"%(path))
         assert 0
     path_zip = path[0: pos_at]
-    path_img = path[pos_at + 2:]
+    path_img = os.path.join(os.path.split(path_zip[:-4])[-1], path[pos_at + 2:])
     if not os.path.isfile(path_zip):
         print("zip file '%s' is not found"%(path_zip))
         assert 0

@@ -149,7 +149,7 @@ def train_net(args, ctx, pretrained, epoch, prefix, begin_epoch, end_epoch, lr, 
     if config.USE_PHILLY:
         total_iter = (config.TRAIN.end_epoch - config.TRAIN.begin_epoch) * len(roidb) / input_batch_size
         progress_frequent = min(args.frequent * 10, 100)
-        batch_end_callback.append(callback.PhillyProgressCallback(total_iter, progress_frequent)
+        batch_end_callback.append(callback.PhillyProgressCallback(total_iter, progress_frequent))
 
     means = np.tile(np.array(config.TRAIN.BBOX_MEANS), 2 if config.CLASS_AGNOSTIC else config.dataset.NUM_CLASSES)
     stds = np.tile(np.array(config.TRAIN.BBOX_STDS), 2 if config.CLASS_AGNOSTIC else config.dataset.NUM_CLASSES)

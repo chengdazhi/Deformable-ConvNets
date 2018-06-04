@@ -117,8 +117,8 @@ class coco(IMDB):
         else:
             raise ValueError("failed to recognize coco dataset")
         data_name = self.data_name + '.zip@' if self.use_philly else self.data_name
-        image_path = os.path.join(self.data_path, 'images', data_name, filename)
-        assert os.path.exists(image_path), 'Path does not exist: {}'.format(image_path)
+        image_path = os.path.join(self.data_path, 'images', data_name, file_name)
+        #assert os.path.exists(image_path), 'Path does not exist: {}'.format(image_path)
         return image_path
 
     def gt_roidb(self):

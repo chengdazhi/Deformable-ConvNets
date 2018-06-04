@@ -24,10 +24,10 @@ def get_image(roidb, config):
     for i in range(num_images):
         roi_rec = roidb[i]
         img_path = roi_rec['image']
-        assert os.path.exists(img_path), '%s does not exist'.format(img_path)
         if '.zip@' in img_path:
             im = phillyzip.imread(img_path, cv2.IMREAD_COLOR | cv2.IMREAD_IGNORE_ORIENTATION)
         else:
+            assert os.path.exists(img_path), '{} does not exist'.format(img_path)
             im = cv2.imread(roi_rec['image'], cv2.IMREAD_COLOR|cv2.IMREAD_IGNORE_ORIENTATION)
             
         if roidb[i]['flipped']:
