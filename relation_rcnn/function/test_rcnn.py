@@ -34,13 +34,13 @@ def test_rcnn(cfg, dataset, image_set, root_path, dataset_path,
     if has_rpn:
         sym_instance = eval(cfg.symbol + '.' + cfg.symbol)()
         sym = sym_instance.get_symbol(cfg, is_train=False)
-        imdb = eval(dataset)(image_set, root_path, dataset_path, result_path=output_path)
+        imdb = eval(dataset)(image_set, root_path, dataset_path, result_path=output_path, use_philly=cfg.USE_PHILLY)
         roidb = imdb.gt_roidb()
     else:
         sym_instance = eval(cfg.symbol + '.' + cfg.symbol)()
         sym = sym_instance.get_symbol_rcnn(cfg, is_train=False)
         rpn_path = cfg.dataset.proposal_cache
-        imdb = eval(dataset)(image_set, root_path, dataset_path, result_path=output_path, rpn_path=rpn_path)
+        imdb = eval(dataset)(image_set, root_path, dataset_path, result_path=output_path, rpn_path=rpn_path, use_philly=cfg.USE_PHILLY)
         gt_roidb = imdb.gt_roidb()
         roidb = eval('imdb.' + proposal + '_roidb')(gt_roidb)
 
