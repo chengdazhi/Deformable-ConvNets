@@ -125,7 +125,7 @@ cd RelationNetworks
 
 We provide trained relation network models, covering all settings in the above Main Results table.
 
-1. To try out our pre-trained deformable models, please download manually from [OneDrive](https://1drv.ms/u/s!Am-5JzdW2XHzhqpD-UHVYNbj25lU0w), and put it under folder `output/`.
+1. To try out our pre-trained relation network models, please download manually from [OneDrive](https://1drv.ms/u/s!Am-5JzdW2XHzhqpD-UHVYNbj25lU0w), and put it under folder `output/`.
 
 	Make sure it looks like this:
 	```
