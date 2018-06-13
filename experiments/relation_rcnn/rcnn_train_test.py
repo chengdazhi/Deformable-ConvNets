@@ -1,8 +1,8 @@
 # --------------------------------------------------------
 # Relation Networks
-# Copyright (c) 2018 Microsoft
+# Copyright (c) 2017 Microsoft
 # Licensed under The MIT License [see LICENSE for details]
-# Written by Jiayuan Gu, Dazhi Cheng
+# Written by Jiayuan Gu, Dazhi Cheng, Guodong Zhang
 # --------------------------------------------------------
 
 import cv2

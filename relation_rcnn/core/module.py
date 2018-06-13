@@ -1,9 +1,16 @@
 # --------------------------------------------------------
 # Relation Networks
-# Copyright (c) 2018 Microsoft
+# Copyright (c) 2017 Microsoft
 # Licensed under The MIT License [see LICENSE for details]
-# Written by Jiayuan Gu, Dazhi Cheng
+# Modified by Jiayuan Gu, Dazhi Cheng, Yuwen Xiong
 # --------------------------------------------------------
+# Based on:
+# MX-RCNN
+# Copyright (c) 2016 by Contributors
+# Licence under The Apache 2.0 License
+# https://github.com/ijkguo/mx-rcnn/
+# --------------------------------------------------------
+
 """A `MutableModule` implement the `BaseModule` API, and allows input shape
 varying with training iterations. If shapes vary, executors will rebind,
 using shared arrays from the initial module binded with maximum shape.

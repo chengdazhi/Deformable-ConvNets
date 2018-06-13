@@ -1,9 +1,17 @@
 # --------------------------------------------------------
 # Relation Networks
-# Copyright (c) 2018 Microsoft
+# Copyright (c) 2017 Microsoft
 # Licensed under The MIT License [see LICENSE for details]
-# Written by Jiayuan Gu, Dazhi Cheng
+# Modified by Jiayuan Gu, Dazhi Cheng, Yuwen Xiong
 # --------------------------------------------------------
+# Based on:
+# MX-RCNN
+# Copyright (c) 2016 by Contributors
+# Licence under The Apache 2.0 License
+# https://github.com/ijkguo/mx-rcnn/
+# --------------------------------------------------------
+
+
 """
 Generate base anchors on index 0
 """

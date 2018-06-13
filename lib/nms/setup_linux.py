@@ -1,5 +1,5 @@
 # --------------------------------------------------------
-# Deformable Convolutional Networks
+# Relation Networks
 # Copyright (c) 2015 Microsoft
 # Licensed under The MIT License [see LICENSE for details]
 # Modified from py-faster-rcnn (https://github.com/rbgirshick/py-faster-rcnn)

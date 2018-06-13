@@ -1,9 +1,17 @@
 # --------------------------------------------------------
 # Relation Networks
-# Copyright (c) 2018 Microsoft
+# Copyright (c) 2017 Microsoft
 # Licensed under The MIT License [see LICENSE for details]
-# Written by Jiayuan Gu, Dazhi Cheng
+# Modified by Dazhi Cheng, Jiayuan Gu, Yuwen Xiong
 # --------------------------------------------------------
+# Based on:
+# py-faster-rcnn
+# Copyright (c) 2016 by Contributors
+# Licence under The MIT License
+# py-faster-rcnn (https://github.com/rbgirshick/py-faster-rcnn)
+# --------------------------------------------------------
+
+
 import numpy as np
 
 from cpu_nms import cpu_nms

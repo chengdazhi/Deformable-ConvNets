@@ -1,9 +1,11 @@
 # --------------------------------------------------------
 # Relation Networks
-# Copyright (c) 2018 Microsoft
+# Copyright (c) 2017 Microsoft
 # Licensed under The MIT License [see LICENSE for details]
-# Written by Jiayuan Gu, Dazhi Cheng
+# Modified by Dazhi Cheng, Jiayuan Gu
+# Written by Yuwen Xiong
 # --------------------------------------------------------
+
 import numpy as np
 class Symbol:
     def __init__(self):
