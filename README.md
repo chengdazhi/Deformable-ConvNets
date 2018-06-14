@@ -14,7 +14,7 @@ This is an official implementation for [Relation Networks for Object Detection](
 
   * This repository is tested on official [MXNet v1.1.0@(commit 629bb6)](https://github.com/apache/incubator-mxnet/commit/e29bb6f76365e45dd44e23941692c9d969959315). You should be able to use it with any version of MXNET that contains required operators like Deformable Convolution. 
   * We trained our model based on the ImageNet pre-trained [ResNet-v1-101](https://github.com/KaimingHe/deep-residual-networks) using a [model converter](https://github.com/dmlc/mxnet/tree/430ea7bfbbda67d993996d81c7fd44d3a20ef846/tools/caffe_converter). The converted model produces slightly lower accuracy (Top-1 Error on ImageNet val: 24.0% v.s. 23.6%).
-  * This repository borrows code from [Deformable ConvNets](https://github.com/msracver/Deformable-ConvNets).
+  * This repository is based on [Deformable ConvNets](https://github.com/msracver/Deformable-ConvNets).
 
 ## License
 
