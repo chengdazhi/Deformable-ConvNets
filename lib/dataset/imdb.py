@@ -1,3 +1,17 @@
+# --------------------------------------------------------
+# Relation Networks for Object Detection
+# Copyright (c) 2017 Microsoft
+# Licensed under The MIT License [see LICENSE for details]
+# Modified by Dazhi Cheng, Jiayuan Gu, Yuwen Xiong
+# --------------------------------------------------------
+# Based on:
+# py-faster-rcnn
+# Copyright (c) 2016 by Contributors
+# Licence under The MIT License
+# py-faster-rcnn (https://github.com/rbgirshick/py-faster-rcnn)
+# --------------------------------------------------------
+
+
 """
 General image database
 An image database creates a list of relative image path called image_set_index and

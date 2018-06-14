@@ -1,5 +1,5 @@
 # --------------------------------------------------------
-# Relation Networks
+# Relation Networks for Object Detection
 # Copyright (c) 2017 Microsoft
 # Licensed under The MIT License [see LICENSE for details]
 # Modified by Jiayuan Gu, Dazhi Cheng, Han Hu, Yuwen Xiong
