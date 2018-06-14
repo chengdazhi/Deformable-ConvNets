@@ -20,7 +20,7 @@ This is an official implementation for [Relation Networks for Object Detection](
 
 © Microsoft, 2018. Licensed under an MIT license.
 
-## Citing Relation Networks
+## Citing Relation Networks for Object Detection
 
 If you find Relation Networks for Object Detection useful in your research, please consider citing:
 ```
