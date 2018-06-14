@@ -157,4 +157,5 @@ TEST:
   SOFTNMS: true
   test_epoch: 8
   max_per_image: 100
+  TOP_ROIS: 1000
 

@@ -142,6 +142,7 @@ config.TEST = edict()
 config.TEST.HAS_RPN = False
 # size of images for each device
 config.TEST.BATCH_IMAGES = 1
+config.TEST.TOP_ROIS = 2000
 
 # RPN proposal
 config.TEST.CXX_PROPOSAL = True

@@ -48,7 +48,7 @@ def test_rcnn(cfg, dataset, image_set, root_path, dataset_path,
         rpn_path = cfg.dataset.proposal_cache
         imdb = eval(dataset)(image_set, root_path, dataset_path, result_path=output_path, rpn_path=rpn_path)
         gt_roidb = imdb.gt_roidb()
-        roidb = eval('imdb.' + proposal + '_roidb')(gt_roidb)
+        roidb = eval('imdb.' + proposal + '_roidb')(gt_roidb, top_roi=cfg.TEST.TOP_ROIS)
 
     # get test data iter
     test_data = TestLoader(roidb, cfg, batch_size=len(ctx), shuffle=shuffle, has_rpn=has_rpn)

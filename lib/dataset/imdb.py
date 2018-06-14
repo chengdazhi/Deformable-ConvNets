@@ -134,7 +134,7 @@ class IMDB(object):
             rpn_roidb = self.load_rpn_roidb(gt_roidb, top_roi)
             roidb = IMDB.merge_roidbs(rpn_roidb, gt_roidb)
         else:
-            roidb = self.load_rpn_roidb(gt_roidb)
+            roidb = self.load_rpn_roidb(gt_roidb, top_roi)
         return roidb
 
     def create_roidb_from_box_list(self, box_list, gt_roidb):
