@@ -70,9 +70,12 @@ If you find Relation Networks useful in your research, please consider citing:
 2. Python 2.7. We recommend using Anaconda2 as it already includes many common packages. We do not support Python 3 yet, if you want to use Python 3 you need to modify the code to make it work.
 
 
-3. Python packages might missing: cython, opencv-python >= 3.2.0, easydict. If `pip` is set up on your system, those packages should be able to be fetched and installed by running
+3. The following Python packages:
   ```
-  pip install -r requirements.txt
+  Cython
+  EasyDict
+  mxnet-cu80
+  opencv-python >= 3.2.0
   ```
 
 
