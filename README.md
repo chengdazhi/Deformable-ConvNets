@@ -1,7 +1,7 @@
 # Relation Networks
 
 
-The major contributors of this repository include [Han Hu](https://github.com/ancientmooner), [Jiayuan Gu](https://github.com/Jiayuan-Gu), [Zheng Zhang](https://github.com/stupidZZ), [Dazhi Cheng](https://github.com/chengdazhi), [Jifeng Dai](https://github.com/daijifeng001) and [Yichen Wei](https://github.com/YichenWei).
+The major contributors of this repository include [Dazhi Cheng](https://github.com/chengdazhi), [Jiayuan Gu](https://github.com/Jiayuan-Gu), [Han Hu](https://github.com/ancientmooner) and [Zheng Zhang](https://github.com/stupidZZ).
 
 
 ## Introduction
