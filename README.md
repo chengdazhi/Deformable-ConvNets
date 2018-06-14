@@ -1,4 +1,4 @@
-# Relation Networks
+# Relation Networks for Object Detection
 
 
 The major contributors of this repository include [Dazhi Cheng](https://github.com/chengdazhi), [Jiayuan Gu](https://github.com/Jiayuan-Gu), [Han Hu](https://github.com/ancientmooner) and [Zheng Zhang](https://github.com/stupidZZ).
@@ -6,7 +6,7 @@ The major contributors of this repository include [Dazhi Cheng](https://github.c
 
 ## Introduction
 
-**Relation Networks** is described in an [CVPR 2018 oral paper](https://arxiv.org/abs/1711.11575). 
+**Relation Networks for Object Detection** is described in an [CVPR 2018 oral paper](https://arxiv.org/abs/1711.11575). 
 
 ## Disclaimer
 
@@ -22,7 +22,7 @@ This is an official implementation for [Relation Networks for Object Detection](
 
 ## Citing Relation Networks
 
-If you find Relation Networks useful in your research, please consider citing:
+If you find Relation Networks for Object Detection useful in your research, please consider citing:
 ```
 @article{hu2017relation,
   title={Relation Networks for Object Detection},
@@ -85,9 +85,9 @@ Any NVIDIA GPUs with at least 6GB memory should be OK.
 
 ## Installation
 
-1. Clone the Relation Networks repository.
+1. Clone the Relation Networks for Object Detection repository.
 ```
-git clone https://github.com/msracver/RelationNetworks.git
+git clone https://github.com/msracver/Relation-Networks-For-Object-Detection.git
 cd RelationNetworks
 ```
 
