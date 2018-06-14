@@ -379,6 +379,7 @@ class LearnNmsOperator(mx.operator.CustomOp):
         sorted_score_reshape = nd.expand_dims(sorted_score, axis=2)
         # sorted_score_reshape = nd.BlockGrad(sorted_score_reshape)
         nms_multi_score = nd.broadcast_mul(lhs=sorted_score_reshape, rhs=full_nms_conditional_score)
+        _ = nms_multi_score.mean().asnumpy()
 
         all_time = time.time() - nms_start_time
         if 'learn_nms_time' not in globals().keys() or 'learn_nms_count' not in globals().keys():
@@ -392,7 +393,7 @@ class LearnNmsOperator(mx.operator.CustomOp):
             globals()['learn_nms_time'].append(all_time)
 
         globals()['learn_nms_count'] += 1
-        if globals()['learn_nms_count'] % 500 == 0:
+        if globals()['learn_nms_count'] % 250 == 0:
             print("--->> learn nms running average time cost: {}".format(float(sum(globals()['learn_nms_time']))/(1000 if globals()['learn_nms_count'] > 1000 else globals()['learn_nms_count'])))
 
         self.assign(out_data[0], req[0], nms_multi_score)
