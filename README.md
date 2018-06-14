@@ -87,8 +87,8 @@ Any NVIDIA GPUs with at least 6GB memory should be OK.
 
 1. Clone the Relation Networks for Object Detection repository.
 ```
-git clone https://github.com/msracver/Relation-Networks-For-Object-Detection.git
-cd RelationNetworks
+git clone https://github.com/msracver/Relation-Networks-for-Object-Detection.git
+cd Relation-Networks-for-Object-Detection
 ```
 
 2. Run `sh ./init.sh`. The scripts will build cython module automatically and create some folders.
