@@ -42,7 +42,7 @@ If you find Relation Networks for Object Detection useful in your research, plea
 | <sub>2FC + softnms(0.6)<br /> ResNet-101 </sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 32.3 | 52.8 | 34.1 | 11.1 | 35.9 | 51.8 | 0.200s | 0.060s |
 | <sub>2FC + Relation Module + softnms<br />ResNet-101</sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 34.7 | 55.3 | 37.2 | 13.7 | 38.8 | 53.6 | 0.211s | 0.059s |
 | <sub>2FC + Learn NMS </br>ResNet-101 </sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 32.6 | 51.8 |  35.0  | 11.8 | 36.6 | 52.1 | 0.162s | 0.020s |
-| <sub>2FC + Relation Module + Learn NMS(e2e)<br />ResNet-101</sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 35.2 | 55.5 | 38.0 | 15.2 | 39.2 | 54.1 | 0.188s | 0.024s |
+| <sub>2FC + Relation Module + Learn NMS(e2e)<br />ResNet-101</sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 35.2 | 55.5 | 38.0 | 15.2 | 39.2 | 54.1 | 0.175s | 0.022s |
 
 #### Deformable Faster RCNN
 
@@ -50,7 +50,7 @@ If you find Relation Networks for Object Detection useful in your research, plea
 |---------------------------------|---------------|---------------|------|---------|---------|-------|-------|-------|---------------------------------|---------------------------------|
 | <sub>2FC + nms(0.5)<br /> ResNet-101 </sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 37.2 | 58.1 | 40.0 | 16.4 | 41.3 | 55.5 | 0.180s | 0.022s |
 | <sub>2FC + softnms(0.6)<br /> ResNet-101 </sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 37.5 | 57.3 | 41.0 | 16.6 | 41.7 | 55.8 | 0.208s | 0.052s |
-| <sub>2FC + Relation Module + Learn NMS(e2e)<br /> ResNet-101 </sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 38.4 | 57.6 | 41.6 | 18.2 | 43.1 | 56.6 | 0.204s | 0.025s |
+| <sub>2FC + Relation Module + Learn NMS(e2e)<br /> ResNet-101 </sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 38.4 | 57.6 | 41.6 | 18.2 | 43.1 | 56.6 | 0.188s | 0.023s |
 
 #### FPN
 
@@ -58,7 +58,7 @@ If you find Relation Networks for Object Detection useful in your research, plea
 |---------------------------------|---------------|---------------|------|---------|---------|-------|-------|-------|---------------------------------|---------------------------------|
 | <sub>2FC + nms(0.5)<br /> ResNet-101 </sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 36.6 | 59.3 | 39.3 | 20.3 | 40.5 | 49.4 | 0.196s | 0.037s |
 | <sub>2FC + softnms(0.6)<br /> ResNet-101 </sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 36.8 | 57.8 | 40.7 | 20.4 | 40.8 | 49.7 | 0.323s | 0.167s |
-| <sub>2FC + Relation Module + Learn NMS(e2e)<br /> ResNet-101 </sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 38.8 | 60.1 | 43.2 | 22.3 | 42.3 | 52.6 | 0.422s | 0.018s |
+| <sub>2FC + Relation Module + Learn NMS(e2e)<br /> ResNet-101 </sub> | <sub>coco trainval35k</sub> | <sub>coco minival</sub> | 38.8 | 60.1 | 43.2 | 22.3 | 42.3 | 52.6 | 0.232s | 0.022s |
 
 
 *Running time is counted on a single Maxwell Titan X GPU (mini-batch size is 1 in inference).*
@@ -123,30 +123,6 @@ cd Relation-Networks-for-Object-Detection
   ```
   3.5 For advanced users, you may put your Python packge into `./external/mxnet/$(YOUR_MXNET_PACKAGE)/mxnet`, and modify `MXNET_VERSION` in `./experiments/relation_rcnn/cfgs/*.yaml` to `$(YOUR_MXNET_PACKAGE)`. Thus you can switch among different versions of MXNet quickly.
 
-
-## Demo Models
-
-We provide trained relation network models, covering all settings in the above Main Results table.
-
-1. To try out our pre-trained relation network models, please download manually from [OneDrive](https://1drv.ms/u/s!Am-5JzdW2XHzhqpD-UHVYNbj25lU0w), and put it under folder `output/`.
-
-	Make sure it looks like this:
-	```
-	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_end2end_8epoch/train2014_valminusminival2014/rcnn_coco-0008.params
-	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_end2end_relation_8epoch/train2014_valminusminival2014/rcnn_coco-0008.params
-	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_end2end_learn_nms_3epoch/train2014_valminusminival2014/rcnn_coco-0003.params
-	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_end2end_relation_learn_nms_8epoch/train2014_valminusminival2014/rcnn_coco-0008.params
-	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_dcn_end2end_8epoch/train2014_valminusminival2014/rcnn_coco-0008.params
-	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_dcn_end2end_relation_learn_nms_8epoch/train2014_valminusminival2014/rcnn_coco-0008.params
-	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_fpn_8epoch/train2014_valminusminival2014/rcnn_fpn_coco-0008.params
-	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_fpn_relation_learn_nms_8epoch/train2014_valminusminival2014/rcnn_fpn_coco-0008.params
-	```
-2. To run the Faster RCNN with Relation Module and Learn NMS model, run
-	```
-	python experiments/relation_rcnn/rcnn_test.py --cfg experiments/relation_rcnn/cfgs/resnet_v1_101_coco_trainvalminus_rcnn_end2end_relation_learn_nms_8epoch.yaml --ignore_cache
-	```
-	If you want to try other models, just change the config files. There are ten config files in `./experiments/relation_rcnn/cfg` folder, eight of which are provided with pretrained models.
-
 ## Preparation for Training & Testing
 
 1. Please download COCO datasets, and make sure it looks like this:
@@ -172,6 +148,30 @@ We provide trained relation network models, covering all settings in the above M
    ./proposal/resnet_v1_101_fpn/rpn_data/COCO_train2014_rpn.pkl
    ./proposal/resnet_v1_101_fpn/rpn_data/COCO_valminusminival2014_rpn.pkl
    ```
+
+## Demo Models
+
+We provide trained relation network models, covering all settings in the above Main Results table.
+
+1. To try out our pre-trained relation network models, please download manually from [OneDrive](https://1drv.ms/u/s!Am-5JzdW2XHzhqpD-UHVYNbj25lU0w), and put it under folder `output/`.
+
+	Make sure it looks like this:
+	```
+	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_end2end_8epoch/train2014_valminusminival2014/rcnn_coco-0008.params
+	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_end2end_relation_8epoch/train2014_valminusminival2014/rcnn_coco-0008.params
+	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_end2end_learn_nms_3epoch/train2014_valminusminival2014/rcnn_coco-0003.params
+	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_end2end_relation_learn_nms_8epoch/train2014_valminusminival2014/rcnn_coco-0008.params
+	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_dcn_end2end_8epoch/train2014_valminusminival2014/rcnn_coco-0008.params
+	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_dcn_end2end_relation_learn_nms_8epoch/train2014_valminusminival2014/rcnn_coco-0008.params
+	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_fpn_8epoch/train2014_valminusminival2014/rcnn_fpn_coco-0008.params
+	./output/rcnn/coco/resnet_v1_101_coco_trainvalminus_rcnn_fpn_relation_learn_nms_8epoch/train2014_valminusminival2014/rcnn_fpn_coco-0008.params
+	```
+2. To run the Faster RCNN with Relation Module and Learn NMS model, run
+	```
+	python experiments/relation_rcnn/rcnn_test.py --cfg experiments/relation_rcnn/cfgs/resnet_v1_101_coco_trainvalminus_rcnn_end2end_relation_learn_nms_8epoch.yaml --ignore_cache
+	```
+	If you want to try other models, just change the config files. There are ten config files in `./experiments/relation_rcnn/cfg` folder, eight of which are provided with pretrained models.
+
 
 ## Usage
 
